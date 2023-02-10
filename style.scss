@@ -23,3 +23,100 @@ body {
 	font-size: 1.6rem;
 	font-family: "Josefin Sans", sans-serif;
 }
+
+main {
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.text-box {
+	max-width: 45rem;
+
+	img {
+		margin-bottom: 6.4rem;
+	}
+
+	h1 {
+		font-size: 5.2rem;
+		text-transform: uppercase;
+		letter-spacing: 1.2rem;
+		margin-bottom: 2.4rem;
+
+		display: flex;
+		flex-direction: column;
+
+		.text-accent {
+			color: $primary-one;
+			font-weight: 300;
+		}
+
+		.text-bold {
+			color: $neutral-one;
+		}
+	}
+
+	p {
+		line-height: 1.7;
+		color: $primary-one;
+		margin-bottom: 3.2rem;
+	}
+
+	.wrapper {
+		display: flex;
+	}
+
+	input {
+		border: 1px solid rgba($primary-one, 0.5);
+		border-radius: 10rem;
+		padding: 2rem;
+		width: 100%;
+	}
+
+	input::placeholder {
+		font-family: "Josefin Sans", sans-serif;
+		color: rgba($primary-one, 0.5);
+		font-weight: 600;
+	}
+
+	button {
+		margin-left: -4.8rem;
+		background-color: linear-gradient(
+			135deg,
+			hsl(0, 80%, 86%),
+			hsl(0, 74%, 74%)
+		);
+		width: 12rem;
+		height: 5.7rem;
+		border-radius: 10rem;
+		border: none;
+		cursor: pointer;
+		box-shadow: $primary-one 0px 5px 15px;
+		transition: all 0.2s ease;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			// background-color: linear-gradient(
+			// 	135deg,
+			// 	hsl(0, 80%, 86%),
+			// 	lighten(hsl(0, 74%, 74%), 10)
+			// );
+		}
+
+		img {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+// SPACING SYSTEM (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+// FONT SIZE SYSTEM (px)
+// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
