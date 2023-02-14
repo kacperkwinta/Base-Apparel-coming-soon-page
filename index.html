@@ -21,7 +21,9 @@
 	<body>
 		<main>
 			<div class="text-box">
-				<img src="images/logo.svg" alt="" />
+				<div class="logo-wrapper">
+					<img src="images/logo.svg" class="logo" alt="" />
+				</div>
 				<h1>
 					<span class="text-accent">We're</span>
 					<span class="text-bold">Coming</span>
@@ -33,11 +35,19 @@
 					launch deals.
 				</p>
 				<div class="wrapper">
-					<input type="email" placeholder="Email Address" />
-					<button type="submit">
-						<img src="images/icon-arrow.svg" alt="" />
-					</button>
+					<form action="#">
+						<input type="email" placeholder="Email Address" />
+						<button type="submit">
+							<img src="images/icon-arrow.svg" alt="" />
+						</button>
+						<img src="images/icon-error.svg" class="error-icon hidden" alt="" />
+					</form>
+					<p class="error hidden">Please provide a valid email</p>
 				</div>
+			</div>
+			<div class="img-box">
+				<img src="images/hero-desktop.jpg" class="img-desktop" alt="" />
+				<img src="images/hero-mobile.jpg" class="img-mobile" alt="" />
 			</div>
 		</main>
 		<!-- <footer>
@@ -48,5 +58,7 @@
 				>. Coded by <a href="#">Your Name Here</a>.
 			</p>
 		</footer> -->
+
+		<script src="script.js"></script>
 	</body>
 </html>

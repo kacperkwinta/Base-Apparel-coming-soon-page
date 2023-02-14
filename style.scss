@@ -3,11 +3,6 @@ $primary-one: hsl(0, 36%, 70%);
 $primary-two: hsl(0, 93%, 68%);
 $neutral-one: hsl(0, 6%, 24%);
 
-// ### Gradients
-
-// - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
-// - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
-
 * {
 	margin: 0;
 	padding: 0;
@@ -26,21 +21,28 @@ body {
 
 main {
 	height: 100vh;
-
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+
+	gap: 4.8rem;
+
+	background-image: url(../images/bg-pattern-desktop.svg);
+	background-repeat: no-repeat no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .text-box {
 	max-width: 45rem;
+	margin-left: 10%;
 
-	img {
-		margin-bottom: 6.4rem;
+	.logo {
+		margin-bottom: 12.6rem;
 	}
 
 	h1 {
-		font-size: 5.2rem;
+		font-size: 7.4rem;
 		text-transform: uppercase;
 		letter-spacing: 1.2rem;
 		margin-bottom: 2.4rem;
@@ -64,26 +66,34 @@ main {
 		margin-bottom: 3.2rem;
 	}
 
-	.wrapper {
+	form {
 		display: flex;
+		position: relative;
 	}
 
 	input {
-		border: 1px solid rgba($primary-one, 0.5);
+		border: 2px solid rgba($primary-one, 0.5);
 		border-radius: 10rem;
 		padding: 2rem;
 		width: 100%;
-	}
+		transition: all 0.3s ease;
 
-	input::placeholder {
-		font-family: "Josefin Sans", sans-serif;
-		color: rgba($primary-one, 0.5);
-		font-weight: 600;
+		&::placeholder {
+			font-family: "Josefin Sans", sans-serif;
+			color: rgba($primary-one, 0.5);
+			font-weight: 600;
+		}
+
+		&:active,
+		&:focus {
+			outline: none;
+			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		}
 	}
 
 	button {
 		margin-left: -4.8rem;
-		background-color: linear-gradient(
+		background-image: linear-gradient(
 			135deg,
 			hsl(0, 80%, 86%),
 			hsl(0, 74%, 74%)
@@ -94,18 +104,18 @@ main {
 		border: none;
 		cursor: pointer;
 		box-shadow: $primary-one 0px 5px 15px;
-		transition: all 0.2s ease;
+		transition: all 0.3s ease;
 
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
 		&:hover {
-			// background-color: linear-gradient(
-			// 	135deg,
-			// 	hsl(0, 80%, 86%),
-			// 	lighten(hsl(0, 74%, 74%), 10)
-			// );
+			background-image: linear-gradient(
+				135deg,
+				hsl(0, 80%, 86%),
+				lighten(hsl(0, 74%, 74%), 10)
+			);
 		}
 
 		img {
@@ -113,10 +123,114 @@ main {
 			padding: 0;
 		}
 	}
+
+	.error {
+		color: $primary-two;
+		font-size: 1.4rem;
+		margin-left: 2.2rem;
+		margin-top: 0.5rem;
+	}
+
+	.input-invalid {
+		border: 2px solid $primary-two;
+	}
+
+	.error-icon {
+		position: absolute;
+		right: 35%;
+		top: 50%;
+		transform: translate(100%, -50%);
+	}
+
+	.hidden {
+		opacity: 0;
+		user-select: none;
+	}
 }
 
-// SPACING SYSTEM (px)
-// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+.img-box {
+	.img-desktop {
+		height: 100vh;
+		display: block;
+	}
 
-// FONT SIZE SYSTEM (px)
-// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+	.img-mobile {
+		display: none;
+	}
+}
+
+// BELOW 1130 PX
+
+@media (max-width: 70.625em) {
+	main {
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column-reverse;
+
+		gap: 2.4rem;
+
+		background-image: url(../images/bg-pattern-desktop.svg);
+		background-repeat: no-repeat no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.text-box {
+		text-align: center;
+		width: 100%;
+		margin-left: 0;
+
+		.logo-wrapper {
+			
+			width: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			padding: 1.2rem;
+			background-color: #fff;
+
+			.logo {
+				left: 10%;
+				margin-bottom: 0;
+			}
+		}
+
+		h1 {
+			font-size: 5.2rem;
+			text-transform: uppercase;
+			letter-spacing: 1.2rem;
+			margin-bottom: 2.4rem;
+
+			display: flex;
+			flex-direction: column;
+
+			.text-accent {
+				color: $primary-one;
+				font-weight: 300;
+			}
+
+			.text-bold {
+				color: $neutral-one;
+			}
+		}
+	}
+
+	.img-box {
+		.img-desktop {
+			display: none;
+		}
+
+		.img-mobile {
+			display: block;
+			margin-top: 6.4rem;
+			width: 100%;
+			border-radius: 4px;
+		}
+	}
+}
+
+// SPACING SYSTEM (px) // 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+// FONT SIZE SYSTEM (px) // 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98;
