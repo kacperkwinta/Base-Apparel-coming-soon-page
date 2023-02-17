@@ -1,6 +1,6 @@
 # Frontend Mentor - Base Apparel coming soon page
 
-![Design preview for the Base Apparel coming soon pagecoding challenge](./design/desktop-preview.jpg)
+![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)
 
 ### Built with 🧱
 - Semantic HTML5 markup
